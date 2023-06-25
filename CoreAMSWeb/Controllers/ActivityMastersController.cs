@@ -194,7 +194,7 @@ namespace CoreAMSWeb.Controllers
                 return NotFound();
             }
 
-            var activityMaster = await _context.ActivityMaster
+            var activityMaster = await _context.ActivityMaster.Include(x => x.ActivityName).Include(x => x.ProjectName)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (activityMaster == null)
             {
