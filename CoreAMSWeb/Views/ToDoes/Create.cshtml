@@ -1,0 +1,68 @@
+﻿@model CoreAMSWeb.Models.ToDo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ToDo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PageName" class="control-label"></label>
+                <input asp-for="PageName" class="form-control" />
+                <span asp-validation-for="PageName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StoredProcedureName" class="control-label"></label>
+                <input asp-for="StoredProcedureName" class="form-control" />
+                <span asp-validation-for="StoredProcedureName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddedOn" class="control-label"></label>
+                <input asp-for="AddedOn" class="form-control" />
+                <span asp-validation-for="AddedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectNameId" class="control-label"></label>
+                <select asp-for="ProjectNameId" class="form-select" asp-items="ViewBag.ProjectNameId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActivityNameId" class="control-label"></label>
+                <select asp-for="ActivityNameId" class="form-select" asp-items="ViewBag.ActivityNameId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModifiedOn" class="control-label"></label>
+                <input asp-for="ModifiedOn" class="form-control" />
+                <span asp-validation-for="ModifiedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

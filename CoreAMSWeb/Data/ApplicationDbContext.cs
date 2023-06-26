@@ -12,5 +12,6 @@ namespace CoreAMSWeb.Data
         public DbSet<ProjectType> ProjectType { get; set; }
         public DbSet<ActivityType> ActivityType { get; set; }
         public DbSet<ActivityMaster> ActivityMaster { get; set; }
+        public DbSet<ToDo> ToDo { get; set; }
     }
 }
