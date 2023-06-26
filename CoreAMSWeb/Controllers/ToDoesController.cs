@@ -63,6 +63,7 @@ namespace CoreAMSWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                toDo.AddedOn = DateTime.Now;
                 _context.Add(toDo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
